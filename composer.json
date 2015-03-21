@@ -1,6 +1,7 @@
 {
     "name": "tck/odbc",
-    "description": "",
+    "description": "ODBC Connector for Laravel",
+    "license": "MIT",
     "authors": [
         {
             "name": "tck",
@@ -8,7 +9,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.4.0",
         "illuminate/support": "~5.0"
     },
     "autoload": {
