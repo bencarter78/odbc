@@ -24,9 +24,6 @@ Now in your config/database.php you will need to add your connection details, it
 		'password' => 'DB_PASSWORD',
 	],
 ```
-'driver'   => 'odbc',
-			//'dsn'      => 'odbc:\\\\tp-pics\pics$\data\pics.add',
-```
 
 ### Usage
 Now in your app you can do something like...
