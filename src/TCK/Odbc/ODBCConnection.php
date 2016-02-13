@@ -11,7 +11,8 @@ class ODBCConnection extends Connection {
 	 */
 	protected function getDefaultQueryGrammar()
 	{
-		return $this->withTablePrefix( new ODBCQueryGrammar );
+		$class = config('database.connections.odbc.grammar.query') ?: '\TCK\Odbc\ODBCQueryGrammar';
+		return $this->withTablePrefix( new $class );
 	}
 
 	/**
@@ -21,6 +22,7 @@ class ODBCConnection extends Connection {
 	 */
 	protected function getDefaultSchemaGrammar()
 	{
+		$class = config('database.connections.odbc.grammar.schema') ?: '\TCK\Odbc\ODBCSchemaGrammar';
 		return $this->withTablePrefix( new ODBCSchemaGrammar );
 	}
 
