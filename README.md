@@ -16,14 +16,27 @@ In your config/app.php file add the Service Provider to the service providers ar
 Now in your config/database.php you will need to add your connection details, it'll look something like this...
 ```
 'odbc'   => [
-		'driver'   => 'odbc',
-		'dsn'      => 'odbc:DB_CONNECTION_STRING', //
-		'host'     => 'DB_HOST',
-		'database' => 'DB_NAME,
-		'username' => 'DB_USERNAME',
-		'password' => 'DB_PASSWORD',
-	],
+	'driver'   => 'odbc',
+	'dsn'      => 'odbc:DB_CONNECTION_STRING', //
+	'host'     => 'DB_HOST',
+	'database' => 'DB_NAME,
+	'username' => 'DB_USERNAME',
+	'password' => 'DB_PASSWORD',
+],
 ```
+
+#### Custom Grammar
+To use SQL Server or other database engines, set the grammar in the config:
+```
+'odbc'   => [
+	...
+	'grammar' => [
+		'query' => Illuminate\Database\Query\Grammars\SqlServerGrammar::class,
+		'schema' => Illuminate\Database\Schema\Grammars\SqlServerGrammar::class,
+	],
+],
+```
+
 
 ### Usage
 Now in your app you can do something like...
