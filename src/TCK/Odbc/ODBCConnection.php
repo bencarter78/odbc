@@ -23,7 +23,7 @@ class ODBCConnection extends Connection {
 	protected function getDefaultSchemaGrammar()
 	{
 		$class = config('database.connections.odbc.grammar.schema') ?: '\TCK\Odbc\ODBCSchemaGrammar';
-		return $this->withTablePrefix( new ODBCSchemaGrammar );
+		return $this->withTablePrefix( new $class );
 	}
 
 }
